@@ -61,9 +61,7 @@ layout:
 
 ## Overview
 
-The intended feel of this design is modern, editorial, welcoming, urban for NYC residents and visitors interested in exploring iconic landmarks.
-
-This guide describes the choices in tokens.css. Use the CSS variables above rather than copying their values. Keep design.md and tokens.css in your project folder, and link tokens.css before your own stylesheet on every page. Add page-specific styling in your own stylesheet.
+The design uses a clean, modern, city-inspired style for NYC residents and visitors interested in exploring iconic landmarks. A simple background, deep navy text, blue links, and white landmark cards keep the page organized and make the photos stand out. Consistent typography, spacing, and a responsive card grid help visitors explore the landmarks on different screen sizes.
 
 ## Colors
 
