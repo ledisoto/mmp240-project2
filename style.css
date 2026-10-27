@@ -33,9 +33,6 @@ figure {
     height: 100%;
     border: 0;
 }
-
-/* Landmark card grid */
-
 /* Landmark card grid */
 .landmarks-grid {
     display: grid;
@@ -46,9 +43,10 @@ figure {
 
 .landmark {
     padding: var(--content-padding);
-    background-color: var(--primary-background);
+    background-color: #FFFFFF;
     color: var(--primary-text);
-    border: 1px solid var(--primary-text);
+    border: 1px solid #D1D5DB;
+    border-radius: 8px;
 }
 
 .landmark figure {

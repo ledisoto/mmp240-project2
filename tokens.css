@@ -16,17 +16,18 @@
   --base-family: "Noto Serif Georgian", sans-serif;
 
   /* Color Styles */
-  --primary-text: #171717;
-  --primary-background: #D9C8AA;
-  --action: #644E16;
-  --action-hover: #503900;
+    /* Color Styles */
+  --primary-text: #172B4D;
+  --primary-background: #c3f993;
+  --action: #0077B6;
+  --action-hover: #005A8D;
   --button-text: #FFFFFF;
 
   --alternate-text: #FFFFFF;
-  --alternate-background: #171717;
-  --alternate-action: #A48528;
+  --alternate-background: #172B4D;
+  --alternate-action: #48CAE4;
   --alternate-action-hover: #FFFFFF;
-  --alternate-button-text: #171717;
+  --alternate-button-text: #172B4D;
 
   /* Spacing Units */
   --space-unit: 0.25rem;
