@@ -1,125 +1,280 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>NYC Landmarks Virtual Tour</title>
-   <link rel="stylesheet" href="tokens.css">
-<link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="tokens.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-        <header>
-        <div class="site-title">NYC Landmarks</div>
+
+<body class="page page--home">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="site-header__inner">
+
+            <a class="site-logo" href="index.html">
+                NYC Landmarks
+            </a>
+
+            <nav class="primary-nav" aria-label="Main navigation">
+                <ul class="primary-nav__list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#landmarks">Landmarks</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+
+        </div>
     </header>
 
+
     <main>
-<section class="introduction">
-    <h1>NYC Landmarks Virtual Tour</h1>
-    <p class="intro">This site highlights some interesting landmarks across New York City's five boroughs.</p>
-    <p>New York City is filled with landmarks, tourist attractions and historic sites dating from before it was known as New York City to more recent additions. Click through this site to explore!</p>
-</section>
-<section class="intro-video">
-        <h2>Explore NYC Landmarks</h2>
-    <div class="videoWrapper ratio">
-        <iframe
-             src="https://www.youtube.com/embed/_xkg7pNSp9M?si=U9tG2575_UGJOHJ5"
-            title="New York City Landmarks video"
-            allowfullscreen>
-        </iframe>
-    </div>
-</section>
 
-<!-- Featured image using <picture> -->
-    <section class="featured-landmark">
-    <h2>A Closer Look at Coney Island</h2>
-<p>The Wonder Wheel is the iconic ferris wheel at Deno’s Wonder Wheel Amusement Park in Coney Island, Brooklyn. Standing 150 feet tall, it has been a centerpiece of the boardwalk skyline since its debut in 1920.</p>
-<p>Coney Island has been a hub of seaside amusement for more than a century, known for its thrilling rides, bright lights, and summertime energy. From the historic Cyclone roller coaster to modern attractions, it remains one of New York City’s most beloved destinations for fun by the beach.</p>
-<picture>
-    <!-- Large screens (desktop/tablet) -->
-    <source
-        media="(min-width: 645px)"
-        srcset="images/pexels-kelsey-caroline-774981359-19122990.jpg">
+        <!-- INTRODUCTION -->
+        <section class="home-intro" id="about">
+            <div class="content-container home-intro__layout">
 
-    <!-- Small screens (mobile) -->
-    <source
-        media="(max-width: 644px)"
-        srcset="images2cropped/pexels-kelsey-caroline-774981359-19122990.jpg">
+                <h1 class="home-intro__title">
+                    NYC Landmarks Virtual Tour
+                </h1>
 
-    <!-- Fallback image -->
-    <img
-        src="images/pexels-kelsey-caroline-774981359-19122990.jpg"
-        alt="Wonder Wheel ferris wheel at Coney Island">
-</picture>
-</section>
-<section class="landmarks" id="landmarks">
-        <h2>Explore More NYC Landmarks</h2>
-        <div class="landmarks-grid">
-<div class="landmark">
-    <figure>
-        <img src="images2cropped/pexels-kelsey-caroline-774981359-19122990.jpg" alt="Wonder Wheel ferris wheel at Coney Island">
-        <figcaption>
-            <a href="https://www.pexels.com/photo/ferris-wheel-in-amusement-park-19122990/">Photo by Kelsey Caroline</a>
-        </figcaption>
-    </figure>
-    <h3>Wonder Wheel ferris wheel at Coney Island</h3>
-</div>
+                <div class="home-intro__copy">
+                    <p class="intro">
+                        This site highlights some interesting landmarks
+                        across New York City's five boroughs.
+                    </p>
 
-<div class="landmark">
-    <figure>
-        <img src="images2cropped/pexels-loquellano-12404963.jpg" alt="Roosevelt Island Tramway leaving Manhattan">
-        <figcaption>
-            <a href="https://www.pexels.com/photo/cable-car-above-city-street-12404963/">Photo by Raphael Loquellano</a>
-        </figcaption>
-    </figure>
-    <h3>Roosevelt Island Tramway</h3>
-</div>
+                    <p>
+                        New York City is filled with landmarks, tourist
+                        attractions and historic sites dating from before
+                        it was known as New York City to more recent
+                        additions. Click through this site to explore!
+                    </p>
+                </div>
 
-<div class="landmark">
-    <figure>
-        <img src="images2cropped/pexels-malcolmhill-12360516.jpg" alt="Yankee Stadium seen from the water">
-        <figcaption>
-            <a href="https://www.pexels.com/photo/yankee-stadium-under-the-blue-sky-12360516/">Photo by Malcolm Hill</a>
-        </figcaption>
-    </figure>
-    <h3>Yankee Stadium</h3>
-</div>
+            </div>
+        </section>
 
-<div class="landmark">
-    <figure>
-        <img src="images2cropped/pexels-mora-versio-2150673251-34091093.jpg" alt="Statue of Liberty viewed from below">
-        <figcaption>
-            <a href="https://www.pexels.com/photo/statue-of-liberty-in-new-york-city-usa-34091093/">Photo by Mora Versio</a>
-        </figcaption>
-    </figure>
-    <h3>Statue of Liberty</h3>
-</div>
 
-<div class="landmark">
-    <figure>
-        <img src="images2cropped/pexels-tracehudson-2424391.jpg" alt="Empire State Building rising above New York City">
-        <figcaption>
-            <a href="https://www.pexels.com/photo/empire-state-building-2424391/">Photo by Trace Hudson</a>
-        </figcaption>
-    </figure>
-    <h3>Empire State Building</h3>
-</div>
+        <!-- VIDEO -->
+        <section class="landmarks-video">
+            <div class="content-container">
 
-<div class="landmark">
-    <figure>
-        <img src="images2cropped/praswin-prakashan-YOCN1a1m_dg-unsplash.jpg" alt="Staten Island Ferry approaching the dock">
-        <figcaption>
-            <a href="https://unsplash.com/photos/a-large-ferry-boat-in-a-body-of-water-YOCN1a1m_dg">Photo by Praswin Prakashan</a>
-        </figcaption>
-    </figure>
-    <h3>Staten Island Ferry</h3>
-</div>
-    </div>
-</section>
+                <h2>Explore NYC Landmarks</h2>
 
-</main>
+                <div class="landmarks-video__media videoWrapper ratio">
+                    <iframe
+                        src="https://www.youtube.com/embed/_xkg7pNSp9M?si=U9tG2575_UGJOHJ5"
+                        title="New York City Landmarks video"
+                        allowfullscreen>
+                    </iframe>
+                </div>
 
-    <footer>
-        <p>Site by _Leditza Soto_</p>
+            </div>
+        </section>
+
+
+        <!-- FEATURED LANDMARK -->
+        <section class="featured-landmark">
+            <div class="content-container featured-landmark__layout">
+
+                <figure class="featured-landmark__media">
+
+                    <picture>
+                        <source
+                            media="(max-width: 644px)"
+                            srcset="images2cropped/pexels-kelsey-caroline-774981359-19122990.jpg">
+
+                        <img
+                            src="images/pexels-kelsey-caroline-774981359-19122990.jpg"
+                            alt="Wonder Wheel ferris wheel at Coney Island">
+                    </picture>
+
+                    <figcaption>
+                        <a href="https://www.pexels.com/photo/ferris-wheel-in-amusement-park-19122990/">
+                            Photo by Kelsey Caroline
+                        </a>
+                    </figcaption>
+
+                </figure>
+
+                <div class="featured-landmark__content">
+
+                    <p class="featured-landmark__label">
+                        Featured Landmark
+                    </p>
+
+                    <h2>A Closer Look at Coney Island</h2>
+
+                    <p>
+                        The Wonder Wheel is the iconic Ferris wheel at
+                        Deno's Wonder Wheel Amusement Park in Coney Island,
+                        Brooklyn. Standing 150 feet tall, it has been a
+                        centerpiece of the boardwalk skyline since its
+                        debut in 1920.
+                    </p>
+
+                    <p>
+                        Coney Island has been a hub of seaside amusement
+                        for more than a century, known for its thrilling
+                        rides, bright lights, and summertime energy.
+                    </p>
+
+                    <a href="landmark-wonder.html">
+                        Explore the Wonder Wheel
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- LANDMARK CARDS -->
+        <section class="landmarks-section" id="landmarks">
+            <div class="content-container">
+
+                <h2>Explore More NYC Landmarks</h2>
+
+                <ul class="landmarks-grid">
+
+                    <li class="landmark-card">
+                        <a href="landmark-liberty.html">
+                            <figure class="landmark-card__figure">
+                                <img
+                                    src="images2cropped/pexels-mora-versio-2150673251-34091093.jpg"
+                                    alt="Statue of Liberty viewed from below">
+
+                                <figcaption>
+                                    Photo by Mora Versio
+                                </figcaption>
+                            </figure>
+
+                            <h3>Statue of Liberty</h3>
+                        </a>
+                    </li>
+
+
+                    <li class="landmark-card">
+                        <a href="landmark-empire.html">
+                            <figure class="landmark-card__figure">
+                                <img
+                                    src="images2cropped/pexels-tracehudson-2424391.jpg"
+                                    alt="Empire State Building rising above New York City">
+
+                                <figcaption>
+                                    Photo by Trace Hudson
+                                </figcaption>
+                            </figure>
+
+                            <h3>Empire State Building</h3>
+                        </a>
+                    </li>
+
+
+                    <li class="landmark-card">
+                        <a href="landmark-ferry.html">
+                            <figure class="landmark-card__figure">
+                                <img
+                                    src="images2cropped/praswin-prakashan-YOCN1a1m_dg-unsplash.jpg"
+                                    alt="Staten Island Ferry approaching the dock">
+
+                                <figcaption>
+                                    Photo by Praswin Prakashan
+                                </figcaption>
+                            </figure>
+
+                            <h3>Staten Island Ferry</h3>
+                        </a>
+                    </li>
+
+
+                    <li class="landmark-card">
+                        <a href="landmark-wonder.html">
+                            <figure class="landmark-card__figure">
+                                <img
+                                    src="images2cropped/pexels-kelsey-caroline-774981359-19122990.jpg"
+                                    alt="Wonder Wheel ferris wheel at Coney Island">
+
+                                <figcaption>
+                                    Photo by Kelsey Caroline
+                                </figcaption>
+                            </figure>
+
+                            <h3>Wonder Wheel</h3>
+                        </a>
+                    </li>
+
+
+                    <li class="landmark-card">
+                        <a href="landmark-yankee.html">
+                            <figure class="landmark-card__figure">
+                                <img
+                                    src="images2cropped/pexels-malcolmhill-12360516.jpg"
+                                    alt="Yankee Stadium seen from the water">
+
+                                <figcaption>
+                                    Photo by Malcolm Hill
+                                </figcaption>
+                            </figure>
+
+                            <h3>Yankee Stadium</h3>
+                        </a>
+                    </li>
+
+
+                    <li class="landmark-card">
+                        <a href="landmark-tram.html">
+                            <figure class="landmark-card__figure">
+                                <img
+                                    src="images2cropped/pexels-loquellano-12404963.jpg"
+                                    alt="Roosevelt Island Tramway leaving Manhattan">
+
+                                <figcaption>
+                                    Photo by Raphael Loquellano
+                                </figcaption>
+                            </figure>
+
+                            <h3>Roosevelt Island Tramway</h3>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="content-container site-footer__layout">
+
+            <div class="site-footer__identity">
+                <a class="site-logo" href="index.html">
+                    NYC Landmarks
+                </a>
+
+                <p>© 2026 NYC Landmarks. All rights reserved.</p>
+                <p>Site by Leditza Soto</p>
+            </div>
+
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <ul class="footer-nav__list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#landmarks">Landmarks</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+
+        </div>
     </footer>
+
 </body>
 </html>

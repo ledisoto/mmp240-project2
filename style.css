@@ -1,7 +1,7 @@
 
-/* =========================
-   RESPONSIVE IMAGES AND VIDEO
-========================= */
+/* =================================
+   GENERAL RESPONSIVE STYLES
+================================= */
 
 img,
 video {
@@ -19,17 +19,84 @@ figcaption {
     font-size: var(--text-size-sm);
 }
 
-.videoWrapper {
+.content-container {
+    width: 100%;
+    max-width: 72rem;
+    margin-inline: auto;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--action);
+    outline-offset: 3px;
+}
+
+
+/* =================================
+   HEADER AND NAVIGATION
+================================= */
+
+.site-header__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.site-logo {
+    font-family: var(--headings-family);
+    font-size: var(--text-size-lg);
+    font-weight: bold;
+    color: var(--primary-text);
+    text-decoration: none;
+}
+
+.primary-nav__list,
+.footer-nav__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.primary-nav a,
+.footer-nav a {
+    color: var(--action);
+}
+
+
+/* =================================
+   HOMEPAGE INTRODUCTION
+================================= */
+
+.home-intro__layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+}
+
+.home-intro__title {
+    margin: 0;
+}
+
+.home-intro__copy .intro {
+    font-size: var(--text-size-lg);
+}
+
+
+/* =================================
+   VIDEO SECTION
+================================= */
+
+.landmarks-video__media {
     position: relative;
     width: 100%;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
 }
 
-.ratio {
-    aspect-ratio: 16 / 9;
-}
-
-.videoWrapper iframe {
+.landmarks-video__media iframe {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -38,123 +105,215 @@ figcaption {
 }
 
 
-/* =========================
-   SHARED SITE STYLES
-========================= */
+/* =================================
+   FEATURED LANDMARK
+================================= */
 
-.site-title {
-    font-family: var(--headings-family);
-    font-size: var(--text-size-lg);
-    font-weight: bold;
+.featured-landmark__layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
 }
 
-header nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-4);
-    margin-top: var(--space-3);
-}
-
-section {
-    margin-bottom: var(--section-spacing);
-}
-
-a:focus-visible,
-button:focus-visible,
-.btn:focus-visible {
-    outline: 3px solid var(--action);
-    outline-offset: 3px;
-}
-
-
-/* =========================
-   HOMEPAGE
-========================= */
-
-.introduction {
-    padding: var(--content-padding);
-}
-
-.introduction .intro {
-    font-size: var(--text-size-lg);
-}
-
-.intro-video,
-.featured-landmark,
-.landmarks {
-    padding: var(--content-padding);
-}
-
-.featured-landmark img {
+.featured-landmark__media img {
     width: 100%;
-    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
 }
+
+.featured-landmark__media figcaption {
+    text-align: right;
+}
+
+.featured-landmark__label {
+    font-size: var(--text-size-sm);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+
+/* =================================
+   LANDMARK CARDS
+================================= */
 
 .landmarks-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--grid-gap);
-    margin-top: var(--space-6);
+    margin: var(--space-6) 0 0;
+    padding: 0;
+    list-style: none;
 }
 
-.landmark {
+.landmark-card {
     padding: var(--content-padding);
-    color: var(--primary-text);
     background-color: #FFFFFF;
+    color: var(--primary-text);
     border: 1px solid #D1D5DB;
     border-radius: 8px;
 }
 
-.landmark figure {
-    margin-bottom: var(--space-4);
+.landmark-card a {
+    color: var(--primary-text);
+    text-decoration: none;
 }
 
-.landmark img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-}
-
-.landmark h3 {
-    margin-bottom: 0;
-}
-
-.landmark a {
+.landmark-card a:hover {
     color: var(--action);
 }
 
-.landmark a:hover {
-    color: var(--action-hover);
+.landmark-card__figure {
+    margin-bottom: var(--space-4);
+}
+
+.landmark-card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.landmark-card h3 {
+    margin-bottom: 0;
 }
 
 
-/* =========================
+/* =================================
+   FOOTER
+================================= */
+
+.site-footer__layout {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.site-footer__identity p {
+    margin-bottom: var(--space-2);
+}
+
+.footer-nav__list {
+    gap: var(--space-3);
+}
+
+
+/* =================================
+   TABLET: 48rem AND WIDER
+================================= */
+
+@media (min-width: 48rem) {
+
+    .site-header__inner {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .home-intro__layout {
+        grid-template-columns: 1.05fr 0.95fr;
+        align-items: start;
+        gap: var(--space-8);
+    }
+
+    .featured-landmark__layout {
+        grid-template-columns: 1.35fr 0.65fr;
+        align-items: center;
+    }
+
+    .landmarks-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .site-footer__layout {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+}
+
+
+/* =================================
+   DESKTOP: 64rem AND WIDER
+================================= */
+
+@media (min-width: 64rem) {
+
+    .landmarks-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .landmarks-video__media {
+        aspect-ratio: 16 / 7;
+    }
+
+}
+
+
+/* =================================
    WONDER WHEEL PAGE
-========================= */
+================================= */
 
-.landmark-intro,
-.landmark-hero,
-.landmark-about,
-.landmark-directions,
-.landmark-more-info {
-    padding: var(--content-padding);
+/* Introduction */
+
+.landmark-intro__layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
 }
 
-.landmark-intro .tagline {
+.landmark-intro__layout h1 {
+    margin-bottom: 0;
+}
+
+.landmark-intro__copy .tagline {
     font-size: var(--text-size-lg);
 }
 
+
+/* Hero image */
+
 .landmark-hero img {
     width: 100%;
-    max-height: 32rem;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
 }
+
+.landmark-hero figcaption {
+    text-align: right;
+}
+
+
+/* About, directions and resources */
+
+.landmark-section__content {
+    max-width: 60rem;
+}
+
+.landmark-directions__actions,
+.landmark-resources__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+    margin: var(--space-4) 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.landmark-directions__actions a,
+.landmark-resources__list a {
+    display: block;
+    padding: var(--space-3);
+    border: 1px solid var(--action);
+}
+
+
+/* Gallery */
 
 .landmark-gallery {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--grid-gap);
-    padding: var(--content-padding);
 }
 
 .landmark-gallery img {
@@ -163,56 +322,33 @@ button:focus-visible,
     object-fit: cover;
 }
 
-.directions-links {
-    padding-left: var(--space-6);
-}
 
-.directions-links li {
-    margin-bottom: var(--space-3);
-}
+/* Previous and next navigation */
 
-.directions-link {
-    display: inline-block;
-}
-
-#pagination {
-    display: flex;
-    justify-content: space-between;
+.landmark-pagination {
+    display: grid;
+    grid-template-columns: 1fr;
     gap: var(--space-4);
     padding: var(--content-padding);
 }
 
-.btn {
-    display: inline-block;
-    padding: var(--space-3) var(--space-4);
-    color: var(--button-text);
-    background-color: var(--action);
-    text-decoration: none;
-}
-
-.btn:hover {
-    color: var(--button-text);
-    background-color: var(--action-hover);
+.landmark-pagination .btn {
+    text-align: center;
 }
 
 
-/* =========================
-   TABLET: 40rem AND WIDER
-========================= */
+/* TABLET */
 
-@media (min-width: 40rem) {
+@media (min-width: 48rem) {
 
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    .landmark-intro__layout {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+        gap: var(--space-8);
     }
 
-    header nav {
-        margin-top: 0;
-    }
-
-    .landmarks-grid {
+    .landmark-directions__actions,
+    .landmark-resources__list {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
@@ -220,29 +356,23 @@ button:focus-visible,
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .landmark-about,
-    .landmark-directions {
-        display: block;
+    .landmark-pagination {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
 }
 
 
-/* =========================
-   DESKTOP: 60rem AND WIDER
-========================= */
+/* DESKTOP */
 
-@media (min-width: 60rem) {
-
-    .landmarks-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .landmark-gallery {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
+@media (min-width: 64rem) {
 
     .landmark-hero img {
-        max-height: 38rem;
+        aspect-ratio: 2 / 1;
+    }
+
+    .landmark-gallery {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
 }
