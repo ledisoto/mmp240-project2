@@ -1,68 +1,118 @@
-/* basic responsive image css */
-img, video {
+
+/* =========================
+   RESPONSIVE IMAGES AND VIDEO
+========================= */
+
+img,
+video {
+    display: block;
     max-width: 100%;
     height: auto;
-}
-
-.landmarks-grid {
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 figure {
     margin: 0;
 }
 
+figcaption {
+    margin-top: var(--space-2);
+    font-size: var(--text-size-sm);
+}
+
 .videoWrapper {
     position: relative;
     width: 100%;
+    overflow: hidden;
 }
 
 .ratio {
     aspect-ratio: 16 / 9;
 }
-.videoWrapper iframe {
-  border: 0;
-}
+
 .videoWrapper iframe {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
     border: 0;
 }
-/* Landmark card grid */
+
+
+/* =========================
+   SHARED SITE STYLES
+========================= */
+
+.site-title {
+    font-family: var(--headings-family);
+    font-size: var(--text-size-lg);
+    font-weight: bold;
+}
+
+header nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    margin-top: var(--space-3);
+}
+
+section {
+    margin-bottom: var(--section-spacing);
+}
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+    outline: 3px solid var(--action);
+    outline-offset: 3px;
+}
+
+
+/* =========================
+   HOMEPAGE
+========================= */
+
+.introduction {
+    padding: var(--content-padding);
+}
+
+.introduction .intro {
+    font-size: var(--text-size-lg);
+}
+
+.intro-video,
+.featured-landmark,
+.landmarks {
+    padding: var(--content-padding);
+}
+
+.featured-landmark img {
+    width: 100%;
+    height: auto;
+}
+
 .landmarks-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     gap: var(--grid-gap);
-    margin-block: var(--space-8);
+    margin-top: var(--space-6);
 }
 
 .landmark {
     padding: var(--content-padding);
-    background-color: #FFFFFF;
     color: var(--primary-text);
+    background-color: #FFFFFF;
     border: 1px solid #D1D5DB;
     border-radius: 8px;
 }
 
 .landmark figure {
-    margin: 0 0 var(--space-4);
+    margin-bottom: var(--space-4);
 }
 
 .landmark img {
-    display: block;
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
-}
-
-.landmark figcaption {
-    font-size: var(--text-size-sm);
-    margin-top: var(--space-2);
 }
 
 .landmark h3 {
@@ -77,55 +127,122 @@ figure {
     color: var(--action-hover);
 }
 
-/* Tablet layout */
-@media (max-width: 800px) {
-    .landmarks-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
 
-/* Mobile layout */
-@media (max-width: 520px) {
-    .landmarks-grid {
-        grid-template-columns: 1fr;
-    }
-}
+/* =========================
+   WONDER WHEEL PAGE
+========================= */
 
-
-/* Page sections */
-.site-title {
-    font-family: var(--headings-family);
-    font-weight: bold;
-}
-
-.introduction {
+.landmark-intro,
+.landmark-hero,
+.landmark-about,
+.landmark-directions,
+.landmark-more-info {
     padding: var(--content-padding);
 }
 
-.introduction .intro {
+.landmark-intro .tagline {
     font-size: var(--text-size-lg);
 }
 
-.intro-video,
-.featured-landmark,
-.landmarks {
-    margin-top: var(--section-spacing);
+.landmark-hero img {
+    width: 100%;
+    max-height: 32rem;
+    object-fit: cover;
+}
+
+.landmark-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--grid-gap);
     padding: var(--content-padding);
 }
 
-.featured-landmark img {
-    display: block;
+.landmark-gallery img {
     width: 100%;
-    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
 }
 
-.landmarks-grid {
-    margin-top: var(--space-6);
+.directions-links {
+    padding-left: var(--space-6);
 }
 
-/* Keyboard accessibility */
-a:focus-visible,
-button:focus-visible {
-    outline: 3px solid var(--action);
-    outline-offset: 3px;
+.directions-links li {
+    margin-bottom: var(--space-3);
+}
+
+.directions-link {
+    display: inline-block;
+}
+
+#pagination {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding: var(--content-padding);
+}
+
+.btn {
+    display: inline-block;
+    padding: var(--space-3) var(--space-4);
+    color: var(--button-text);
+    background-color: var(--action);
+    text-decoration: none;
+}
+
+.btn:hover {
+    color: var(--button-text);
+    background-color: var(--action-hover);
+}
+
+
+/* =========================
+   TABLET: 40rem AND WIDER
+========================= */
+
+@media (min-width: 40rem) {
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header nav {
+        margin-top: 0;
+    }
+
+    .landmarks-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .landmark-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .landmark-about,
+    .landmark-directions {
+        display: block;
+    }
+}
+
+
+/* =========================
+   DESKTOP: 60rem AND WIDER
+========================= */
+
+@media (min-width: 60rem) {
+
+    .landmarks-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .landmark-gallery {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .landmark-hero img {
+        max-height: 38rem;
+    }
+
 }
